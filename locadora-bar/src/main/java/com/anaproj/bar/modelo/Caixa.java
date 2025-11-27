@@ -13,8 +13,8 @@ public class Caixa {
     }
 
     public void cobrar(Produto produto) {
-        double valorFinal = estrategia.calcular(produto.getPreco());
-        System.out.println(String.format("CAIXA: Cobrando '%s'. Valor Final: R$ %.2f", 
-            produto.getDescricao(), valorFinal));
+        double valorFinal = estrategia.calcular(produto);
+        System.out.println(String.format("CAIXA: Cobrando '%s' | Original: R$ %.2f | Final: R$ %.2f", 
+            produto.getDescricao(), produto.getPreco(), valorFinal));
     }
 }

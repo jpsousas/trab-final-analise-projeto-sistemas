@@ -2,7 +2,7 @@ package com.anaproj.bar.modelo;
 
 public class PrecoNormal implements EstrategiaPreco {
     @Override
-    public double calcular(double valorOriginal) {
-        return valorOriginal;
+    public double calcular(Produto produto) {
+        return produto.getPreco();
     }
 }
