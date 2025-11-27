@@ -1,5 +1,7 @@
 package com.anaproj.bar.modelo;
 
+import com.anaproj.bar.factory.Cigarro;
+import com.anaproj.bar.factory.Produto;
 public class HappyHour implements EstrategiaPreco {
     @Override
     public double calcular(Produto produto) {

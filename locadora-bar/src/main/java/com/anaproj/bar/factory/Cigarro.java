@@ -1,4 +1,4 @@
-package com.anaproj.bar.modelo;
+package com.anaproj.bar.factory;
 
 public class Cigarro implements Produto {
     private final String id;

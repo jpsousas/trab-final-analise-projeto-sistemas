@@ -1,4 +1,4 @@
-package com.anaproj.bar.modelo;
+package com.anaproj.bar.factory;
 
 public interface Bebida extends Produto {
 }

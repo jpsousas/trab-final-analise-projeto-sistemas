@@ -1,11 +1,11 @@
-package com.anaproj.bar.modelo;
+package com.anaproj.bar.factory;
 
-public class Cerveja implements Bebida {
+public class Whisky implements Bebida {
     private final String id;
     private final String descricao;
     private final double preco;
 
-    public Cerveja(String id, String descricao, double preco) {
+    public Whisky(String id, String descricao, double preco) {
         if (preco < 0) {
             throw new IllegalArgumentException("Preço não pode ser negativo");
         }
@@ -30,6 +30,6 @@ public class Cerveja implements Bebida {
 
     @Override
     public String toString() {
-        return String.format("Cerveja{id='%s', descricao='%s', preço=R$%.2f}", id, descricao, preco);
+        return String.format("Whisky{id='%s', descricao='%s', preço=R$%.2f}", id, descricao, preco);
     }
 }
