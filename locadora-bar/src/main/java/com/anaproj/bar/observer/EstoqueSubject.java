@@ -12,7 +12,7 @@ public class EstoqueSubject {
         observadores.add(obs);
     }
 
-    protected void notificarObservadores(Produto produto, int qtd) {
+    public void notificarObservadores(Produto produto, int qtd) {
         for (ObservadorEstoque obs : observadores) {
             obs.atualizar(produto, qtd);
         }
