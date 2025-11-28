@@ -7,4 +7,9 @@ public class PrecoNormal implements EstrategiaPreco {
     public double calcular(Produto produto) {
         return produto.getPreco();
     }
+
+    @Override
+    public String toString() {
+        return "Normal";
+    }
 }

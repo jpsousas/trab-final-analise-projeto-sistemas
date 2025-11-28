@@ -12,4 +12,9 @@ public class HappyHour implements EstrategiaPreco {
         
         return produto.getPreco() * 0.5;
     }
+
+    @Override
+    public String toString() {
+        return "Happy Hour (50% off em bebidas)";
+    }
 }
