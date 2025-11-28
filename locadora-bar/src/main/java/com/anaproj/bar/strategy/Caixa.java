@@ -16,6 +16,10 @@ public class Caixa {
         System.out.println("--- CAIXA: Regra de preço alterada ---");
     }
 
+    public String getNomeEstrategia() {
+        return this.estrategia.toString();
+    }
+
     public void cobrar(Produto produto) {
         double valorFinal = estrategia.calcular(produto);
 

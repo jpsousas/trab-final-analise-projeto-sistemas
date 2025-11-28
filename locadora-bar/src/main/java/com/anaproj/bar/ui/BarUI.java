@@ -29,7 +29,7 @@ public class BarUI {
         while (rodando) {
             System.out.println("\n=== MENU BAR ===");
             System.out.println("1. Realizar Venda");
-            System.out.println("2. Configurar Cobrança");
+            System.out.println("2. Configurar Cobrança [Atual: " + caixa.getNomeEstrategia() + "]");
             System.out.println("3. Ver Estoque");
             System.out.println("4. Fechamento de Caixa");
             System.out.println("5. Repor Estoque");
