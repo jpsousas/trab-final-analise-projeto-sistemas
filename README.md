@@ -35,3 +35,5 @@ mvn package
 mvn exec:java -Dexec.mainClass="com.anaproj.bar.App"
 //ou clique com o botao direito no arquivo App.java e selecione "Run Java"
 ```
+
+![Diagrama](diagrama-classes.png)

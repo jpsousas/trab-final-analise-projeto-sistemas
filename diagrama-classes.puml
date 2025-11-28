@@ -1,0 +1,192 @@
+@startuml
+enum com.anaproj.bar.singleton.Estoque {
++  INSTANCIA
+- Map<String,Integer> quantidades
+- EstoqueSubject subject
++ void registrarObservador(ObservadorEstoque)
++ void adicionar(Produto,int)
++ void darBaixa(Produto,int)
++ int getQuantidade(Produto)
+}
+
+
+class com.anaproj.bar.strategy.PrecoNormal {
++ double calcular(Produto)
++ String toString()
+}
+
+class com.anaproj.bar.factory.AguaCriadora {
++ Produto criar()
+}
+
+abstract class com.anaproj.bar.factory.Tabaco {
++ String vender()
+}
+
+class com.anaproj.bar.factory.Cigarro {
+- String descricao
+- double preco
++ String getDescricao()
++ double getPreco()
++ String toString()
+}
+
+
+class com.anaproj.bar.strategy.HappyHour {
++ double calcular(Produto)
++ String toString()
+}
+
+class com.anaproj.bar.App {
++ {static} void main(String[])
+}
+
+class com.anaproj.bar.factory.Cerveja {
+- String descricao
+- double preco
++ String getDescricao()
++ double getPreco()
++ String toString()
+}
+
+
+class com.anaproj.bar.factory.CigarroCriadora {
+- String descricao
+- double preco
++ Produto criar()
+}
+
+
+class com.anaproj.bar.observer.EstoqueSubject {
+- List<ObservadorEstoque> observadores
++ void registrarObservador(ObservadorEstoque)
++ void notificarObservadores(Produto,int)
+}
+
+
+class com.anaproj.bar.factory.CervejaCriadora {
+- String descricao
+- double preco
++ Produto criar()
+}
+
+
+class com.anaproj.bar.decorator.Gelo {
++ String getDescricao()
++ double getPreco()
+}
+
+class com.anaproj.bar.strategy.DescontoUniversitario {
++ double calcular(Produto)
++ String toString()
+}
+
+interface com.anaproj.bar.factory.Produto {
+~ String getDescricao()
+~ double getPreco()
+}
+
+class com.anaproj.bar.decorator.Limao {
++ String getDescricao()
++ double getPreco()
+}
+
+class com.anaproj.bar.factory.Whisky {
+- String descricao
+- double preco
++ String getDescricao()
++ double getPreco()
++ String toString()
+}
+
+
+class com.anaproj.bar.strategy.Caixa {
+- EstrategiaPreco estrategia
+- double saldoDoDia
++ void setEstrategia(EstrategiaPreco)
++ String getNomeEstrategia()
++ void cobrar(Produto)
++ void imprimirFechamentoCaixa()
+}
+
+
+interface com.anaproj.bar.strategy.EstrategiaPreco {
+~ double calcular(Produto)
+}
+
+interface com.anaproj.bar.observer.ObservadorEstoque {
+~ void atualizar(Produto,int)
+}
+
+class com.anaproj.bar.ui.BarUI {
+- Caixa caixa
+- Scanner scanner
+- ProdutoCriadora fabricaAgua
+- ProdutoCriadora fabricaCerveja
+- ProdutoCriadora fabricaWhisky
+- ProdutoCriadora fabricaCigarro
++ void iniciar()
+- void registrarPerda()
+- void reporEstoque()
+- void realizarVenda()
+- void alterarEstrategia()
+- void verificarEstoqueSimples()
+- int lerInteiro()
+}
+
+
+class com.anaproj.bar.factory.Agua {
+- {static} String DESCRICAO
+- {static} double PRECO
++ String getDescricao()
++ double getPreco()
++ String toString()
+}
+
+
+class com.anaproj.bar.observer.Gerente {
++ void atualizar(Produto,int)
+}
+
+abstract class com.anaproj.bar.factory.Bebida {
++ String preparar()
+}
+
+class com.anaproj.bar.factory.WhiskyCriadora {
+- String descricao
+- double preco
++ Produto criar()
+}
+
+
+abstract class com.anaproj.bar.factory.ProdutoCriadora {
++ {abstract}Produto criar()
+}
+
+abstract class com.anaproj.bar.decorator.DecoradorProduto {
+# Produto produtoDecorado
++ String getDescricao()
++ double getPreco()
+}
+
+
+
+
+com.anaproj.bar.strategy.EstrategiaPreco <|.. com.anaproj.bar.strategy.PrecoNormal
+com.anaproj.bar.factory.Bebida <|-- com.anaproj.bar.factory.AguaCriadora
+com.anaproj.bar.factory.ProdutoCriadora <|-- com.anaproj.bar.factory.Tabaco
+com.anaproj.bar.factory.Produto <|.. com.anaproj.bar.factory.Cigarro
+com.anaproj.bar.strategy.EstrategiaPreco <|.. com.anaproj.bar.strategy.HappyHour
+com.anaproj.bar.factory.Produto <|.. com.anaproj.bar.factory.Cerveja
+com.anaproj.bar.factory.Tabaco <|-- com.anaproj.bar.factory.CigarroCriadora
+com.anaproj.bar.factory.Bebida <|-- com.anaproj.bar.factory.CervejaCriadora
+com.anaproj.bar.decorator.DecoradorProduto <|-- com.anaproj.bar.decorator.Gelo
+com.anaproj.bar.strategy.EstrategiaPreco <|.. com.anaproj.bar.strategy.DescontoUniversitario
+com.anaproj.bar.decorator.DecoradorProduto <|-- com.anaproj.bar.decorator.Limao
+com.anaproj.bar.factory.Produto <|.. com.anaproj.bar.factory.Whisky
+com.anaproj.bar.factory.Produto <|.. com.anaproj.bar.factory.Agua
+com.anaproj.bar.observer.ObservadorEstoque <|.. com.anaproj.bar.observer.Gerente
+com.anaproj.bar.factory.ProdutoCriadora <|-- com.anaproj.bar.factory.Bebida
+com.anaproj.bar.factory.Bebida <|-- com.anaproj.bar.factory.WhiskyCriadora
+com.anaproj.bar.factory.Produto <|.. com.anaproj.bar.decorator.DecoradorProduto
+@enduml
