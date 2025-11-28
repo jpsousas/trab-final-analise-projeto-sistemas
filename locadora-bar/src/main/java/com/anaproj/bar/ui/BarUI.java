@@ -31,6 +31,7 @@ public class BarUI {
             System.out.println("1. Realizar Venda");
             System.out.println("2. Configurar Cobrança");
             System.out.println("3. Ver Estoque");
+            System.out.println("4. Fechamento de Caixa");
             System.out.println("0. Sair");
             System.out.print("Escolha: ");
 
@@ -44,7 +45,10 @@ public class BarUI {
                     alterarEstrategia();
                     break;
                 case 3:
-                     verificarEstoqueSimples();
+                    verificarEstoqueSimples();
+                    break;
+                case 4:
+                    caixa.imprimirFechamentoCaixa();
                     break;
                 case 0:
                     rodando = false;
